@@ -1,0 +1,94 @@
+$border-color: rgb(255, 128, 0);
+$backgroud-color: #b3b3b3;
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    #drum-machine {
+      box-sizing: border-box;
+        background: $backgroud-color;
+        width: 660px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        outline: 5px solid $border-color;
+        box-shadow: rgba(255, 128, 0, 0.6) 10px 10px 20px, rgba(255, 128, 0, 0.8) -10px -10px 20px;
+        border-radius: 3px;
+        .drum-pads {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            .drum-pad {
+                width: 100px;
+                height: 80px;
+                outline: 1px solid #8d8d8d;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: black 3px 3px 5px;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+            .drum-pad:hover {
+                font-size: 24px;
+                transition: ease-out 0.1s;
+                text-decoration: underline 2px red solid;
+            }
+            .drum-pad:active {
+                transform: scale(0.9);
+                background: $border-color;
+                text-decoration: none;
+                transition: ease-out 0.2s;
+            }
+        }
+        #display {
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            white-space: pre-wrap;
+            line-height: 2;
+            height: 100px;
+            outline: 2px solid $border-color;
+            border-radius: 3px;
+        }
+    }
+}
+
+@media (max-width: 1199.98px){
+  #drum-machine{
+    display: flex;
+    flex-direction: column;
+    max-width: 970px;
+    height: 60%;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 991.98px){
+  #drum-machine{
+    max-width: 750px;
+    box-shadow: none;
+  }
+  .drum-pads{
+
+  }
+}
+@media (max-width: 767.98px){
+  #drum-machine{
+    transform: scale(0.9);
+    max-width: none;
+    padding: 0 15px;
+    box-shadow: none;
+  }
+}
+@media (max-width: 570px){
+  #drum-machine{
+    transform: scale(0.8);
+    height: 100vh;
+  }
+}
